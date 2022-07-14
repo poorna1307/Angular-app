@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2 class="sub-heading">CONTACTS</h2>
+    <div class="home-body" *ngIf="this._contactsService.contacts.length>0">
+        <div class="contacts-container">
+            <div *ngFor="let contact of contactsList; let i = index;">
+                <div class="contact-card pointer" (click)="showContactDetails(i)" [ngClass]="{'selected':_contactsService.selectedContact===i}">
+                    <div class="contact-card-data">
+                        <div class="contact-card-title">{{contact.name}}</div>
+                        <div>{{contact.mobile}}</div>
+                        <div>{{contact.email}}</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="details-container">
+            <div class="container-title">{{name}}</div>
+            <div class="container-body">
+            <div class="data-padding">Email: <span>{{email}}</span></div>
+            <div class="data-padding">Mobile: <span>{{mobile}}</span></div>
+            <div class="data-padding">Landline: <span>{{landline}}</span></div>
+            <div class="data-padding">Website: <span>{{website}}</span></div>
+            <div class="data-padding">Address: <span>{{address}}</span>
+            </div>
+            </div>
+        </div>
+
+        <div class="control-container">
+            <a class="controls" (click)="onEdit()" ><img src="../../assets/edit1.jpg" width="15px" height="17px"><span class="control-icon">EDIT</span> </a>
+            <a (click)="onDelete()" class="controls" ><img src="../../assets/delete2.png" width="15px" height="19px"> <span class="control-icon">DELETE</span> </a>
+        </div>
+
+    </div>
+    <div class="contacts-not-found" *ngIf="this._contactsService.contacts.length===0">No Contacts Present</div>
+</body>
+</html>
+
+
