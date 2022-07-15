@@ -19,7 +19,7 @@ export class HomeComponent implements OnInit {
   constructor(public _contactsService:ContactsService, private router: Router) {}
   ngOnInit(): void {
     this.contactsList=this._contactsService.getContacts();
-    this.showContactDetails(0);
+    this.showContactDetails(this._contactsService.selectedContact);
   }
   showContactDetails(i:number){
     let contact = this.contactsList[i];

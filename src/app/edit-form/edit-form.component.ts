@@ -14,6 +14,7 @@ export class EditFormComponent implements OnInit {
 
   ngOnInit(): void {
   }
+  currentIndex:number=0
   editContact = this.editForm.group({
     name: ['', Validators.required],
     email: ['', Validators.required],
@@ -27,7 +28,9 @@ export class EditFormComponent implements OnInit {
       window.alert('Fill all required fields')
     }
     else {
+      this.currentIndex=this._contactsService.selectedContact;
       this._contactsService.contacts[this._contactsService.selectedContact] = this.editContact.value;
+      this._contactsService.selectedContact=this.currentIndex;
       this.router.navigate(['/'])
     }
   }
