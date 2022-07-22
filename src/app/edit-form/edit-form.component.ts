@@ -9,8 +9,21 @@ import { ContactsService } from '../contacts.service';
   styleUrls: ['./edit-form.component.sass']
 })
 export class EditFormComponent implements OnInit {
-
-  constructor(private editForm: FormBuilder,public _contactsService:ContactsService,private router:Router) { }
+  public name: string = "";
+  public email: string = "";
+  public mobile: number = 0;
+  public landline: number = 0;
+  public website: string = "";
+  public address: string = "";
+  constructor(private editForm: FormBuilder,public _contactsService:ContactsService,private router:Router) {
+    let contact = this._contactsService.contacts[this._contactsService.selectedContact];
+    this.name = contact.name  
+    this.email = contact.email
+    this.mobile = contact.mobile
+    this.landline = contact.landline
+    this.website = contact.website
+    this.address = contact.address
+  }
 
   ngOnInit(): void {
   }
