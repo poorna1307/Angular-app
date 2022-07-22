@@ -7,8 +7,9 @@
     <title>Document</title>
 </head>
 <body>
+    <div *ngIf="this._contactsService.contacts.length>0">
     <h2 class="sub-heading">CONTACTS</h2>
-    <div class="home-body" *ngIf="this._contactsService.contacts.length>0">
+    <div class="home-body">
         <div class="contacts-container">
             <div *ngFor="let contact of contactsList; let i = index;">
                 <div class="contact-card pointer" (click)="showContactDetails(i)" [ngClass]="{'selected':_contactsService.selectedContact===i}">
@@ -39,6 +40,7 @@
         </div>
 
     </div>
+</div>
     <div class="contacts-not-found" *ngIf="this._contactsService.contacts.length===0">No Contacts Present</div>
 </body>
 </html>
