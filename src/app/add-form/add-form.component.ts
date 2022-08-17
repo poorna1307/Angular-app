@@ -29,7 +29,7 @@ export class AddFormComponent implements OnInit {
     }
     else {
       this._contactsService.contacts.push(this.addContact.value)
-      this._contactsService.selectedContact=(this._contactsService.contacts.length)-1
+      this._contactsService.selectedContact=(this._contactsService.contacts.length)-1;
       this.router.navigate(['/'])
     }
   }
