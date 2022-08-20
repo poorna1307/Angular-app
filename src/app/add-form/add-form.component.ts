@@ -16,7 +16,7 @@ export class AddFormComponent implements OnInit {
   }
   addContact = this.addForm.group({
     name: ['', Validators.required],
-    email: ['', Validators.required],
+    email: ['', Validators.required,Validators.email],
     mobile: ['', Validators.required],
     landline: ['',],
     website: [''],
