@@ -5,9 +5,9 @@ import { EditFormComponent } from './edit-form/edit-form.component';
 import { HomeComponent } from './home/home.component';
 
 const routes: Routes = [
-  {path:'',component:HomeComponent},
-  {path:'add',component:AddFormComponent},
-  {path:'edit',component:EditFormComponent}
+  {path:'',component:HomeComponent,pathMatch:'full'},
+  {path:'add',component:AddFormComponent,pathMatch:'full'},
+  {path:'edit',component:EditFormComponent,pathMatch:'full'}
 ];
 
 @NgModule({
