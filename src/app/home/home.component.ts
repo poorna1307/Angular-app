@@ -19,7 +19,7 @@ export class HomeComponent implements OnInit {
   constructor(public _contactsService:ContactsService, private router: Router) {}
   ngOnInit(): void {
     this.contactsList=this._contactsService.getContacts();
-    if(this._contactsService.contacts.length>0){
+    if(this.contactsList.length>0){
     this.showContactDetails(this._contactsService.selectedContact);
     }
   }
@@ -35,11 +35,13 @@ export class HomeComponent implements OnInit {
   }
   onDelete(){
     this._contactsService.contacts.splice(this._contactsService.selectedContact, 1);
+    if(this._contactsService.contacts.length>0){
     if(this._contactsService.selectedContact!==0){
     this._contactsService.selectedContact-=1
     this.showContactDetails(this._contactsService.selectedContact)}
     if(this._contactsService.selectedContact===0){
       this.showContactDetails(this._contactsService.selectedContact)}
+    }  
     }
   onEdit(){
     this.router.navigate(['/edit'])
