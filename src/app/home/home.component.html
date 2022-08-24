@@ -7,7 +7,7 @@
     <title>Document</title>
 </head>
 <body>
-    <div class="contacts-not-found" *ngIf="this._contactsService.contacts.length===0">No Contacts Present</div>
+    <div class="contacts-not-found" *ngIf="this._contactsService.contacts.length==0">No Contacts Present</div>
     <div *ngIf="this._contactsService.contacts.length>0">
     <h2 class="sub-heading">CONTACTS</h2>
     <div class="home-body">
