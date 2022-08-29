@@ -7,41 +7,43 @@
     <title>Document</title>
 </head>
 <body>
-    <div class="contacts-not-found" *ngIf="this._contactsService.contacts.length==0">No Contacts Present</div>
     <div *ngIf="this._contactsService.contacts.length>0">
-    <h2 class="sub-heading">CONTACTS</h2>
-    <div class="home-body">
-        <div class="contacts-container">
-            <div *ngFor="let contact of contactsList; let i = index;">
-                <div class="contact-card pointer" (click)="showContactDetails(i)" [ngClass]="{'selected':_contactsService.selectedContact===i}">
-                    <div class="contact-card-data">
-                        <div class="contact-card-title">{{contact.name}}</div>
-                        <div>{{contact.mobile}}</div>
-                        <div>{{contact.email}}</div>
+        <h2 class="sub-heading">CONTACTS</h2>
+        <div class="home-container">
+            <div class="contacts-container">
+                <div *ngFor="let contact of contactsList; let i = index;">
+                    <div class="contact-card pointer" (click)="showContactDetails(i)" [ngClass]="{'selected':_contactsService.selectedContact===i}">
+                        <div class="contact-card-data">
+                            <div class="contact-card-title">{{contact.name}}</div>
+                            <div>{{contact.mobile}}</div>
+                            <div>{{contact.email}}</div>
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
-        
-        <div class="details-container">
-            <div class="container-title">{{name}}</div>
-            <div class="container-body">
-            <div class="data-padding">Email: <span>{{email}}</span></div>
-            <div class="data-padding">Mobile: <span>{{mobile}}</span></div>
-            <div class="data-padding">Landline: <span>{{landline}}</span></div>
-            <div class="data-padding">Website: <span>{{website}}</span></div>
-            <div class="data-padding">Address: <span>{{address}}</span>
+            
+            <div class="details-container">
+                <div class="details-card-title">{{name}}</div>
+                <div class="details-card-data">
+                <div class="data-padding">Email: <span>{{email}}</span></div>
+                <div class="data-padding">Mobile: <span>{{mobile}}</span></div>
+                <div class="data-padding">Landline: <span>{{landline}}</span></div>
+                <div class="data-padding">Website: <span>{{website}}</span></div>
+                <div class="data-padding">Address: <span>{{address}}</span>
+                </div>
+                </div>
             </div>
+
+            <div class="controls-container">
+                <a class="controls" (click)="onEdit()" ><img src="../../assets/edit1.jpg" width="16px" height="17px" class="mb-1"><span class="control-icon">EDIT</span> </a>
+                <a (click)="onDelete()" class="controls" ><img src="../../assets/delete2.png" width="16px" height="19px" class="mb-1"> <span class="control-icon">DELETE</span> </a>
             </div>
-        </div>
 
-        <div class="control-container">
-            <a class="controls" (click)="onEdit()" ><img src="../../assets/edit1.jpg" width="16px" height="17px" class="mb-1"><span class="control-icon">EDIT</span> </a>
-            <a (click)="onDelete()" class="controls" ><img src="../../assets/delete2.png" width="16px" height="19px" class="mb-1"> <span class="control-icon">DELETE</span> </a>
         </div>
-
     </div>
-</div>
+    <div class="contacts-not-found" *ngIf="this._contactsService.contacts.length==0">
+        No Contacts Present
+    </div>
 </body>
 </html>
 

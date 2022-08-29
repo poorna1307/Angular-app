@@ -7,12 +7,12 @@
     <title>Document</title>
 </head>
 <body>
-<div class="edit-body">
+<div class="edit-container">
     
-    <div class="home-body" *ngIf="this._contactsService.contacts.length>0">
+    <div *ngIf="this._contactsService.contacts.length>0">
         <h2 class="sub-heading">CONTACTS</h2>
         <div class="contacts-container">
-            <div class="contact-cards" *ngFor="let contact of this._contactsService.contacts; let i = index;">
+            <div  *ngFor="let contact of this._contactsService.contacts; let i = index;">
                 <div class="contact-card pointer" [ngClass]="{'selected':_contactsService.selectedContact===i}">
                     <div class="contact-card-data">
                         <div class="contact-card-title">{{contact.name}}</div>

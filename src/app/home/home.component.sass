@@ -1,76 +1,73 @@
+@mixin font-size-weight($size,$weight)
+    font:
+        size: $size
+        weight: $weight
+    
+.sub-heading
+    @include font-size-weight(large,bold)
+    margin: 0px
+    padding:25px 0px 0px 25px
 
-.home-body
+.home-container
     display: flex
     justify-content: space-between
     width: 1150px
-.sub-heading
-    margin: 0px
-    font-size: large
-    font-weight: bold
-    padding:25px 0px 0px 25px
 
-.contacts-container
-    margin: 18px 0px 0px 25px
-    width: 350px
-    font-family: 'Lato', sans-serif
-    border-top: solid #CCCCCC
-    border-width: 0.1px
+    .contacts-container
+        margin: 18px 0px 0px 25px
+        width: 350px
+        font-family: 'Lato', sans-serif
+        border:
+            top: solid #CCCCCC
+            width: 0.1px
 
-.contact-card
-    padding-bottom:6px 
-    border: solid #CCCCCC
-    border-width: 0.9px
+        .contact-card
+            padding-bottom:6px 
+            border: solid #CCCCCC
+            border-width: 0.9px
 
-.contact-card-title
-    font-size:22px
-    padding-bottom:4px
+            .contact-card-data
+                @include font-size-weight(18px,500)
+                padding:7px 0px 8px 20px
+                margin: 0px
 
-.contact-card-data
-    padding:7px 0px 8px 20px
-    margin: 0px
-    font-size: 18px
-    font-weight: 500
+            .contact-card-title
+                font-size:22px
+                padding-bottom:4px
 
-.pointer
-    cursor: pointer
-.selected
-    background-color: #cee7f2
+        .pointer
+            cursor: pointer
+            
+        .selected
+            background-color: #cee7f2
 
-.details-container
-    margin-top: 3px 
+    .details-container
+        margin-top: 3px
 
-.container-title
-    font-size: 30px
-    font-weight: 600
-    padding-bottom: 15px
+        .details-card-title
+            @include font-size-weight(30px,600)
+            padding-bottom: 15px
 
-.container-body
-    font-size: 19px
-    font-weight:500
+        .details-card-data
+            @include font-size-weight(19px,500)
 
-.data-padding
-    padding-bottom: 15px
+            .data-padding
+                padding-bottom: 15px
 
-.new-line
-    padding-left: 70px
+    .controls-container
+        margin-top: 15px
 
-.control-container
-    
-    margin-top: 15px
+        .controls
+            @include font-size-weight(20px,500)
+            text-decoration: none
+            color: black
+            cursor: pointer
 
-.controls
-    text-decoration: none
-    font-size: 20px
-    font-weight: 500
-    color: black
-    cursor: pointer
-
-.control-icon
-    padding: 90px 15px 0px 4px
-    text-decoration: none
+            .control-icon
+                padding: 90px 15px 0px 4px
+                text-decoration: none
 
 .contacts-not-found
+    @include font-size-weight(x-large,bolder)
     color: red
-    font-weight: bolder
-    font-size: x-large
     padding: 25px 0px 0px 25px

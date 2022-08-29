@@ -1,44 +1,50 @@
-.edit-body
+@mixin font-size-weight($size,$weight)
+    font:
+        size: $size
+        weight: $weight
+    
+.edit-container
     display: flex
-.sub-heading
-    margin: 0px
-    font-size: large
-    font-weight: bold
-    padding:25px 0px 0px 25px
 
-.contacts-container
-    margin: 18px 0px 0px 25px
-    width: 300px
-    font-family: 'Lato', sans-serif
+    .sub-heading
+        @include font-size-weight(large,bold)
+        margin: 0px
+        padding:25px 0px 0px 25px
 
-.contact-card
-    padding-bottom:6px 
-    border: solid #CCCCCC
-    border-width: 1.5px
+    .contacts-container
+        margin: 18px 0px 0px 25px
+        width: 350px
+        font-family: 'Lato', sans-serif
 
-.contact-card-title
-    font-size:22px
-    font-weight:300
-    padding-bottom:6px
+        .contact-card
+            padding-bottom:6px 
+            border: solid #CCCCCC
+            border-width: 1.5px
 
-.contact-card-data
-    padding:8px 0px 8px 20px
-    margin: 0px
-    font-size: 17px
-    font-weight: 200
+            .contact-card-data
+                @include font-size-weight(18px,500)
+                padding:8px 0px 8px 20px
+                margin: 0px
+                
+                .contact-card-title
+                    font-size:22px
+                    padding-bottom:6px
 
-.pointer
-    cursor: pointer
-.selected
-    background-color: #cee7f2
-.form-container
-    width: 700px
-    box-shadow: black 1px 1px 10px
-    padding: 20px
-    margin-left: 70px
-    margin-top: 8px
-.form-group
-    padding-bottom: 18px
-    padding-right: 150px
-.button
-    text-align: right
+
+        .pointer
+            cursor: pointer
+
+        .selected
+            background-color: #cee7f2
+
+    .form-container
+        width: 700px
+        box-shadow: black 1px 1px 10px
+        padding: 20px
+        margin: 25px 0px 0px 70px
+
+        .form-group
+            padding: 0px 150px 18px 0px
+
+            .button
+                text-align: right

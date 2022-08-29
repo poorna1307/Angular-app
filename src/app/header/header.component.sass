@@ -1,43 +1,47 @@
+$colors: ("primary-color": #3398cc,"secondary-color": #333333)
+
+@mixin font-size-weight($size,$weight)
+    font:
+        size: $size
+        weight: $weight
 
 .head-container
-    background-color:#3398cc
+    background-color: map-get($colors,primary-color )
     color: white
     vertical-align: middle
     margin: 0px
     padding: 0px
 
-.header
-    font-size: 50px
-    font-weight: lighter
-    margin: 0px
-    padding: 28px 0px 28px 25px
+    .heading
+        @include font-size-weight(50px,lighter)
+        margin: 0px
+        padding: 28px 0px 28px 25px
 
 .navbar-container
-    background-color: #333333
+    background-color: map-get($colors,secondary-color)
     display: flex
     justify-content: space-between
     padding: 0px 20px 0px 11px
 
-.navbar-items
-    color: white
-    display: flex
-    padding-left: 12px
+    .navbar-items
+        color: white
+        display: flex
+        padding-left: 12px
 
-.navbar-item
-    font-weight: bolder
-    font-size: 17px
+        .navbar-item
+            @include font-size-weight(17px,bolder)
 
-a
-    text-decoration: none
-    padding: 6px 10px 6px 5px
-    color: white
+        a
+            text-decoration: none
+            padding: 7px 10px 6px 5px
+            color: white
 
-.blog-icon
-    padding:4px 2px 2px 0px
-    vertical-align: middle
-
-.active
-    background-color: #FD9802
-    color: #333333
-    border-left:3px solid white
-    padding: 7px 10px 10px 10px
+        .active
+            background-color: #FD9802
+            color: map-get($colors,secondary-color)
+            border-left:3px solid white
+            padding: 7px 10px 7px 10px
+            
+    .blog-icon
+        padding:5px 2px 0px 0px
+        vertical-align: middle
