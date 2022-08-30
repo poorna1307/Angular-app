@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
-import { ContactsService } from '../contacts.service';
+import { ContactsService } from '../../services/contacts.service';
 
 @Component({
   selector: 'app-edit-form',

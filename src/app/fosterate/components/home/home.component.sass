@@ -1,0 +1,41 @@
+@import '../../sass/_mixin'
+    
+@include sub-heading()
+
+.home-container
+    display: flex
+    justify-content: space-between
+    width: 1150px
+
+    @include table-container(true)
+
+    .details-container
+        margin-top: 3px
+
+        .details-card-title
+            @include font-size-weight(30px,600)
+            padding-bottom: 15px
+
+        .details-card-data
+            @include font-size-weight(19px,500)
+
+            .data-padding
+                padding-bottom: 15px
+
+    .controls-container
+        margin-top: 15px
+
+        .controls
+            @include font-size-weight(20px,500)
+            text-decoration: none
+            color: black
+            cursor: pointer
+
+            .control-icon
+                padding: 90px 15px 0px 4px
+                text-decoration: none
+
+.contacts-not-found
+    @include font-size-weight(x-large,bolder)
+    color: red
+    padding: 25px 0px 0px 25px

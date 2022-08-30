@@ -3,22 +3,18 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { HomeComponent } from './home/home.component';
-import { HeaderComponent } from './header/header.component';
-import { AddFormComponent } from './add-form/add-form.component';
-import { EditFormComponent } from './edit-form/edit-form.component';
+import { HeaderComponent } from './fosterate/components/header/header.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { FosterateModule } from './fosterate/fosterate.module';
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    HomeComponent,
-    HeaderComponent,
-    AddFormComponent,
-    EditFormComponent
+    HeaderComponent
   ],
   imports: [
+    FosterateModule,
     BrowserModule,
     AppRoutingModule,
     ReactiveFormsModule,

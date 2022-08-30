@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { ContactsService } from '../contacts.service';
+import { ContactsService } from '../../services/contacts.service';
 
 @Component({
   selector: 'app-home',
