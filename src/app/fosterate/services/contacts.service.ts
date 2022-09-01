@@ -15,6 +15,6 @@ export class ContactsService {
   ]
   constructor() {}
   getContacts(){
-    return this.contacts
+    return this.contacts;
   }
 }
