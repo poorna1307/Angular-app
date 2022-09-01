@@ -17,17 +17,17 @@ export class EditFormComponent implements OnInit {
   public address: string = "";
   constructor(private editForm: FormBuilder,public _contactsService:ContactsService,private router:Router) {
     let contact = this._contactsService.contacts[this._contactsService.selectedContact];
-    this.name = contact.name  
-    this.email = contact.email
-    this.mobile = contact.mobile
-    this.landline = contact.landline
-    this.website = contact.website
-    this.address = contact.address
+    this.name = contact.name;
+    this.email = contact.email;
+    this.mobile = contact.mobile;
+    this.landline = contact.landline;
+    this.website = contact.website;
+    this.address = contact.address;
   }
 
   ngOnInit(): void {
   }
-  currentIndex:number=0
+  currentIndex:number=0;
   editContact = this.editForm.group({
     name: ['', Validators.required],
     email: ['', Validators.required],

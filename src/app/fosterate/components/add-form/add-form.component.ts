@@ -25,12 +25,12 @@ export class AddFormComponent implements OnInit {
 
   onSubmit() {
     if (this.addContact.value.name === '' || this.addContact.value.email === '' || this.addContact.value.mobile === '') {
-      window.alert('Fill all required fields')
+      window.alert('Fill all required fields');
     }
     else {
-      this._contactsService.contacts.push(this.addContact.value)
+      this._contactsService.contacts.push(this.addContact.value);
       this._contactsService.selectedContact=(this._contactsService.contacts.length)-1;
-      this.router.navigate(['/'])
+      this.router.navigate(['/']);
     }
   }
 }

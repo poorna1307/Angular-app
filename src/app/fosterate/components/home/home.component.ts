@@ -25,25 +25,27 @@ export class HomeComponent implements OnInit {
   }
   showContactDetails(i:number){
     let contact = this.contactsList[i];
-    this.name = contact.name  
-    this.email = contact.email
-    this.mobile = contact.mobile
-    this.landline = contact.landline
-    this.website = contact.website
-    this.address = contact.address
-    this._contactsService.selectedContact=i
+    this.name = contact.name;
+    this.email = contact.email;
+    this.mobile = contact.mobile;
+    this.landline = contact.landline;
+    this.website = contact.website;
+    this.address = contact.address;
+    this._contactsService.selectedContact=i;
   }
   onDelete(){
     this._contactsService.contacts.splice(this._contactsService.selectedContact, 1);
     if(this._contactsService.contacts.length>0){
     if(this._contactsService.selectedContact!==0){
-    this._contactsService.selectedContact-=1
-    this.showContactDetails(this._contactsService.selectedContact)}
+    this._contactsService.selectedContact-=1;
+    this.showContactDetails(this._contactsService.selectedContact);
+  }
     if(this._contactsService.selectedContact===0){
-      this.showContactDetails(this._contactsService.selectedContact)}
+      this.showContactDetails(this._contactsService.selectedContact);
+    }
     }  
     }
   onEdit(){
-    this.router.navigate(['/edit'])
+    this.router.navigate(['/edit']);
   }
 }
