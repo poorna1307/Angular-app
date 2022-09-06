@@ -2,17 +2,13 @@
 
 $colors: ("primary-color": #3398cc,"secondary-color": #333333)
 
-.head-container
+
+.header
+    @include font-size-weight(50px,lighter)
     background-color: map-get($colors,primary-color )
     color: white
-    vertical-align: middle
     margin: 0px
-    padding: 0px
-
-    .heading
-        @include font-size-weight(50px,lighter)
-        margin: 0px
-        padding: 28px 0px 28px 25px
+    padding: 28px 0px 28px 25px
 
 .navbar-container
     background-color: map-get($colors,secondary-color)
