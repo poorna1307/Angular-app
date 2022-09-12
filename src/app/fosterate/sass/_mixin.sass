@@ -1,15 +1,24 @@
 @mixin form-styles()
-    .form-container
-        width: 700px
-        box-shadow: black 1px 1px 10px
+    .form-box
+        width: 720px
+        box-shadow: #2d2d2d 1px 1px 20px
+        margin-left: 25px
         padding: 20px
-        margin: 25px 0px 0px 70px
+        margin-top: 30px
 
         .form-group
-            padding: 0px 150px 18px 0px
+            padding-bottom: 18px
 
-            .button
-                text-align: right
+        .form-inputs 
+            width: 555px
+        
+        .form-button 
+            text-align: right
+
+            .btn 
+                font-weight: 600
+                width: 120px
+          
 
 @mixin font-size-weight($size,$weight)
     font:

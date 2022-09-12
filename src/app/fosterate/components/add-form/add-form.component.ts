@@ -9,6 +9,7 @@ import { ContactsService } from '../../services/contacts.service';
   styleUrls: ['./add-form.component.sass']
 })
 export class AddFormComponent implements OnInit {
+formType: string="Add";
 
   constructor(private addForm: FormBuilder,public _contactsService:ContactsService,private router:Router) { }
 
